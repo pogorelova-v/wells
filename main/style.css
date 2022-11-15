@@ -26,6 +26,10 @@ body{
     transition: all 0.5s;
     background-color: var(--button-active);
 }
+
+footer{
+    height: 100px;
+}
 /*------header-------*/
 header{
     background-color: #000;
@@ -143,14 +147,19 @@ header a:active{
 /*-----------------------carousel----------------------*/
 #carousel{
     position: relative;
-    margin: 0 20px;
+    margin: 0 auto;
+    width: 350px;
+    height: 310px;
+    overflow: hidden;
 }
 .carousel-control{
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .carousel-control img{
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     background-color: var(--blue);
     padding: 10px;
     border-radius: 50%;
@@ -159,5 +168,39 @@ header a:active{
     right: 0;
 }
 #carouselControlLeft{
+    left: 0;
+}
+#carouselControlLeft img{
     transform: rotate(180deg);
+}
+.carousel-wrapper{
+    display: flex;
+    width: 350px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+.carousel-elem{
+    width: 250px;
+    height: 310px;
+    margin: 0 50px;
+    border: var(--blue) 4px solid;
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+.carousel-elem img{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0 ;
+}
+.carousel-elem h5{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 5px 5px;
+}
+.carousel-elem span{
+    margin: 0 0 10px 5px;
+    display: block;
+    font-size: 14px;
 }
