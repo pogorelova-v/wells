@@ -1,64 +1,49 @@
-//-----------------carousel
+let slidersLine = document.querySelector('.sliders')
+let slidersArr = document.querySelectorAll('.slide')
+let slidePrev = document.querySelector('.slide-prev')
+let slideNext = document.querySelector('.slide-next')
+slidersArr = Array.from(slidersArr);
 
-const carouselControlLeft  = document.getElementById('carouselControlLeft');
-const carouselControlRight  = document.getElementById('carouselControlRight');
-let carouselWrapper = document.querySelector('.carousel-wrapper');
+let slideWidthNext = '-' + slidersArr[0].clientWidth + "px";
+let slideWidthPrev = slidersArr[0].clientWidth + "px";
 
-
-function goRight() {
-    let goRight = carouselWrapper.offsetLeft;
-    if(goRight % 350){
-        return false
-    }
-
-    if(goRight < -1400){
-        carouselWrapper.style.left = 0;
-    } else {
-        carouselWrapper.style.left = goRight - 350 + "px";
-    }
+function slideAnimate(start, end) {
+    slidersLine.animate([
+        // keyframes
+        { transform: `translateX(${start})` },
+        { transform: `translateX(${end})` }
+      ], {
+        // timing options
+        duration: 500
+      });
 }
-function goLeft() {
-    let goRight = carouselWrapper.offsetLeft;
-    if(goRight % 350){
-        return false
-    }
+
+
+
+slideNext.addEventListener('click', () => {
     
-    if(goRight === 0){
-        carouselWrapper.style.left = -1750 + "px";
-    } else {
-        carouselWrapper.style.left = goRight + 350 + "px";
-    }
-}
+    slideAnimate(0, slideWidthNext)
 
-carouselControlRight.addEventListener('click', () => {
-    goRight()
-})
-carouselControlLeft.addEventListener('click', () => {
-    goLeft()
+    setTimeout(() => {
+    
+            slidersLine.append(slidersArr[0]);
+            slidersArr.push(slidersArr.shift())
+            console.log(slidersArr[0]);
+    }, 500);
+    
 })
 
 
-let touchstartX = 0
-let touchendX = 0
 
-document.addEventListener('touchstart', e => {
-  touchstartX = e.changedTouches[0].screenX
+/*
+slidersLine.prepend(slidersArr[1])
+
+node.append(...nodes or strings) – добавляет узлы или строки в конец node,
+node.prepend(...nodes or strings) – вставляет узлы или строки в начало node,
+
+
+
+slidePrev.addEventListener('click', () => {
+   
 })
-
-document.addEventListener('touchend', e => {
-  touchendX = e.changedTouches[0].screenX
-  checkDirection()
-})
-
-function checkDirection() {
-    if (touchendX < touchstartX){
-      goRight()
-    }
-    if (touchendX > touchstartX) {
-      goLeft()
-    }
-}
-
-//-----------------------carousel elem
-
-let carouselElemArr = document.querySelectorAll('.carousel-elem')
+*/
