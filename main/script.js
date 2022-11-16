@@ -4,36 +4,35 @@ let slidePrev = document.querySelector('.slide-prev')
 let slideNext = document.querySelector('.slide-next')
 slidersArr = Array.from(slidersArr);
 
+let marginSlidersLine = '-' + slidersArr[0].clientWidth *2 + "px";
+slidersLine.style.left = marginSlidersLine;
+
 let slideWidthNext = '-' + slidersArr[0].clientWidth + "px";
 let slideWidthPrev = slidersArr[0].clientWidth + "px";
 
-function slideAnimate(start, end) {
+function slideAnimate(end) {
     slidersLine.animate([
         // keyframes
-        { transform: `translateX(${start})` },
         { transform: `translateX(${end})` }
       ], {
         // timing options
-        duration: 500
+        duration: 400
       });
 }
 
-
-
 slideNext.addEventListener('click', () => {
-    
-    slideAnimate(0, slideWidthNext)
-
     setTimeout(() => {
-    
-            slidersLine.append(slidersArr[0]);
-            slidersArr.push(slidersArr.shift())
-            console.log(slidersArr[0]);
-    }, 500);
-    
+            slidersLine.prepend(slidersArr[0]);
+            slidersArr.unshift(slidersArr.pop())
+    }, 400);
+    slideAnimate(slideWidthPrev)
 })
 
-
+slidePrev.addEventListener('click', () => {
+          slidersLine.append(slidersArr[0]);
+          slidersArr.push(slidersArr.shift())
+    slideAnimate(slideWidthNext)
+})
 
 /*
 slidersLine.prepend(slidersArr[1])
