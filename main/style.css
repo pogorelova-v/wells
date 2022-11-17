@@ -151,7 +151,8 @@ header a:active{
 }
 .sliders{
     display: flex;
-    position: relative;
+    position: relative;    
+    
 }
 .slide{
     width: 100%;

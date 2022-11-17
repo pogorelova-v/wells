@@ -2,47 +2,31 @@ let slidersLine = document.querySelector('.sliders')
 let slidersArr = document.querySelectorAll('.slide')
 let slidePrev = document.querySelector('.slide-prev')
 let slideNext = document.querySelector('.slide-next')
-slidersArr = Array.from(slidersArr);
 
-let marginSlidersLine = '-' + slidersArr[0].clientWidth *2 + "px";
-slidersLine.style.left = marginSlidersLine;
-
-let slideWidthNext = '-' + slidersArr[0].clientWidth + "px";
-let slideWidthPrev = slidersArr[0].clientWidth + "px";
-
-function slideAnimate(end) {
-    slidersLine.animate([
-        // keyframes
-        { transform: `translateX(${end})` }
-      ], {
-        // timing options
-        duration: 400
-      });
-}
+let count = 0;
+let slideWidth = document.querySelector('.wrapper-slider').offsetWidth;
+console.log(slideWidth);
 
 slideNext.addEventListener('click', () => {
-    setTimeout(() => {
-            slidersLine.prepend(slidersArr[0]);
-            slidersArr.unshift(slidersArr.pop())
-    }, 400);
-    slideAnimate(slideWidthPrev)
+    count++;
+    slidersLine.style.transition = 'all 0.5s';
+    if(count >= slidersArr.length){
+        count = 0;
+        slidersLine.style.transition = 'all 0s';
+    }
+    rollSlide()
 })
 
 slidePrev.addEventListener('click', () => {
-          slidersLine.append(slidersArr[0]);
-          slidersArr.push(slidersArr.shift())
-    slideAnimate(slideWidthNext)
+    count--;
+    slidersLine.style.transition = 'all 0.5s';
+    if(count < 0){
+        count = slidersArr.length -1;
+        slidersLine.style.transition = 'all 0s';
+    }
+    rollSlide()
 })
 
-/*
-slidersLine.prepend(slidersArr[1])
-
-node.append(...nodes or strings) – добавляет узлы или строки в конец node,
-node.prepend(...nodes or strings) – вставляет узлы или строки в начало node,
-
-
-
-slidePrev.addEventListener('click', () => {
-   
-})
-*/
+function rollSlide() {
+    slidersLine.style.transform = 'translate(-'+count*slideWidth+'px)';
+}
