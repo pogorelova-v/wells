@@ -220,9 +220,10 @@ header a:active{
 
 /**--------------------------проблемы---------------*/
 .problems-systems{
-    padding: 50px;
+    padding-left: 10%;
 }
 #problems h2{
+    padding-top: 50px;
     margin-bottom: 20px;
 }
 .system-of-problem{
@@ -289,6 +290,7 @@ header a:active{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .description-img{
     height: 300px;
@@ -412,8 +414,6 @@ input[type="range"]::-webkit-slider-thumb:active {
     transition: all 0.5s;
   }
 
-
-  /*---*/
 #video{
     display: flex;
     flex-direction: column;
@@ -512,7 +512,6 @@ input[type="range"]::-webkit-slider-thumb:active {
 footer {
     background-color: #000;
     margin-top: 50px;
-    padding-top: 50px;
     position: relative;
     width: 100%;
 }
@@ -527,19 +526,21 @@ footer {
     color: white;
     margin-bottom: 10px;
 }
-
+.fidback{    
+    padding-top: 50px;
+}
 .autor{
     width: 100%;
+    position: relative;
 }
 .autor img{
     width: 100%;
 }
-.autor a{
+.autor-a{
+    position: absolute;
     color: #000;
     font-size: 14px;
-    display: block;
-    height: 15px;
-    text-align: end;
-    margin-right: 10px;
-    margin-top: -18px;
+    margin: 0 10px 5px 0;
+    bottom: 0;
+    right: 0;
 }
