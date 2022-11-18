@@ -1,0 +1,11 @@
+@media (max-width: 370px) {
+    header a img{
+        width: 30px;
+    }
+    header ul li{
+        font-size: 14px;
+    }
+    .circle-wrapper ul li{
+        font-size: 30px;
+    }
+}

@@ -365,7 +365,23 @@ header a:active{
     width: 300px;
     height: 300px;
 }
-
+.description-water-bottom{
+    position: absolute;
+    z-index: -1;
+    bottom: -10%;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    overflow-x: hidden;
+}
+.description-water-decor{
+    margin-left: 100px;
+    background-image: url(../assets/icon/water.png);
+    background-size: cover;
+    animation: water 50s linear infinite;
+    width: 300px;
+    height: 300px;
+}
 /*-----------------------------видео слацдер----------*/
 
 
@@ -500,14 +516,6 @@ footer {
     position: relative;
     width: 100%;
 }
-/*
-.footer-water{
-    width: 300px;
-    height: 300px;
-    top: -200px;
-    right: -200px;
-}
-*/
 .a-footer img{
     width: 40px;
     margin-right: 10px;
