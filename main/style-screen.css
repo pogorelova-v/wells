@@ -6,7 +6,10 @@
         font-size: 14px;
     }
     .circle-wrapper ul li{
-        font-size: 30px;
+        font-size: 25px;
+    }
+    .video2-elem iframe{
+        height: auto;
     }
 }
 @media (min-width: 768px) {
@@ -57,9 +60,12 @@
         width: 250px;
     }
     
-    .video-file{
-        width: 50%;
-        left: 25%;
+    #video2{
+        width: 80%;
+        margin: 0 auto 50px auto;
+    }
+    .video2-elem iframe{
+        width: 100%;
     }
         
     footer {
@@ -88,17 +94,6 @@
     }
     #advantages{
         padding: 50px 0 20px 20%;
-    }
-    #carousel{
-        background: linear-gradient(120deg, var(--blue),var(--blue-light), var(--blue));
-    }
-    .wrapper-slider{
-        width: 70%;
-        margin: 0 auto;
-    }
-    .slide{
-        padding: 20px 50px 0 50px;
-        background: transparent;
     }
     .problems-systems{
         display: flex;
@@ -140,13 +135,19 @@
         width: 400px;
         height: 400px;
     }
-    #video{
-        margin-left: 10%;
-        margin-right: 10%;
+    #video2{
+        width: 80%;
+        display: flex;
+        margin: 0 auto 50px auto;
+        justify-content: space-between;
     }
-    .video-card {
-        height: 300px;
+    .video2-elem{
+        width: 49%;
     }
+    .video2-elem:first-child{
+        margin-bottom: 0;
+    }
+
     #price table{
         width: 50%;
     }
@@ -158,25 +159,18 @@
         width: 500px;
         height: 500px;
     }    
-    .wrapper-slider{
-        width: 50%;
-    }
     .problems-systems{
         width: 80%;
     }    
     #description{
         padding: 30px 20%;
     }
-    #video{
-        margin-left: 20%;
-        margin-right: 20%;
+    #video2{
+        width: 60%;
     }
-     
-    .video-file{
-        width: 40%;
-        left: 30%;
+    .video2-elem:first-child{
+        margin-bottom: 0;
     }
-
     
     #price table{
         width: 30%;

@@ -1,3 +1,4 @@
+/*
 let slidersLine = document.querySelector('.sliders')
 let slidersArr = document.querySelectorAll('.slide')
 let slidePrev = document.querySelector('.slide-prev')
@@ -165,3 +166,24 @@ document.addEventListener( 'click', (e) => {
 	}
 })
  
+*/
+
+new Swiper('.swiper-container', {
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    spaceBetween: 20,
+    loop: true,
+    breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        480: {
+          slidesPerView: 2,
+        },
+        640: {
+          slidesPerView: 3,
+        }
+      }
+});
