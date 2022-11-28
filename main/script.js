@@ -137,6 +137,7 @@ function handleTouchMoveV (e){
 //-------------------scale video  .video-file-wrapper-open
 
 let videoFile = document.querySelectorAll('.video-file');
+let videoEl = document.querySelectorAll('video');
 videoFile = Array.from(videoFile);
 
 let indClickVideo = null;
@@ -158,6 +159,8 @@ document.addEventListener( 'click', (e) => {
 	if ( !withinBoundaries ) {
 		for (let i = 0; i < videoFile.length; i++) {
             videoFile[i].classList.remove('video-file-open');
+            videoEl[i].pause();
+            videoEl[i].currentTime = 0;
         }
 	}
 })
