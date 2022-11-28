@@ -1,7 +1,7 @@
 :root {
-    --blue: rgb(116, 85, 255);
-    --blue-light: rgb(210, 200, 255);
-    --button-active: rgb(47, 0, 255);
+    --blue: rgb(103, 187, 255);
+    --blue-light: rgb(0, 38, 255);
+    --button-active: rgb(33, 0, 180);
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -140,15 +140,22 @@ header a:active{
 }
 
 /*--------------------advantages-----------------------*/
+h1{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
 #advantages{
     padding: 50px;
     position: relative;
     overflow: hidden;
+    margin: 50px 0;
 }
 .advantages-item{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-size: 18px;
 }
 .advantages-item img{
     width: 30px;
@@ -175,7 +182,7 @@ header a:active{
     width: 100%;
     flex-shrink: 0;
     padding: 5px;
-    background: linear-gradient(120deg, var(--blue),var(--blue-light), var(--blue));
+    background: linear-gradient(120deg, var(--blue),var(--blue), var(--blue-light));
 }
 .slide img{
     width: 100%;
@@ -219,6 +226,10 @@ header a:active{
 }
 
 /**--------------------------проблемы---------------*/
+#problems{
+    margin-bottom: 50px;
+}
+
 .problems-systems{
     padding-left: 10%;
 }
@@ -271,7 +282,7 @@ header a:active{
 }
 
 .diagnostic-system .a-viber{
-    background-color: var(--blue);
+    background-color: rgb(140, 89, 190);
 }
 .diagnostic-system .a-watsapp{
     background-color: rgb(0, 170, 14);
@@ -393,7 +404,7 @@ input[type="range"] {
     display: block;
     -webkit-appearance: none;
     appearance: none;
-    background: var(--blue-light);
+    background: var(--blue);
     border-radius: 5px;
     outline: 0;
     margin: 0 auto;
@@ -403,7 +414,7 @@ input[type="range"] {
     appearance: none;
     width: 100px;
     height: 10px;
-    background: var(--blue);
+    background: var(--blue-light);
     border-radius: 5px;
     position:relative;    
     transition: all 0.5s;
