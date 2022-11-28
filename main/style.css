@@ -1,6 +1,6 @@
 :root {
-    --blue: rgb(103, 187, 255);
-    --blue-light: rgb(0, 38, 255);
+    --blue: rgb(67, 171, 255);
+    --blue-light: rgb(0, 47, 255);
     --button-active: rgb(33, 0, 180);
 }
 body{
@@ -117,15 +117,21 @@ header a:active{
     font-size: 40px;
     font-weight: 700;
 }
+h1{
+    font-weight: 900;
+}
 .circle-wrapper ul{
     margin-left: -210px;
+}
+.circle-wrapper ul li:nth-child(1){
+    text-decoration: underline var(--blue-light) solid;
+    letter-spacing: 1px;
 }
 .circle-wrapper ul li:nth-child(2){
     margin-left: 40px;
 }
 .circle-wrapper ul li:nth-child(3){
     margin-left: 80px;
-    color:  var(--blue-light);
 }
 .circle-wrapper ul li:nth-child(4){
     margin-left: 40px;
@@ -140,16 +146,12 @@ header a:active{
 }
 
 /*--------------------advantages-----------------------*/
-h1{
-    font-size: 25px;
-    font-weight: 500;
-    margin-bottom: 30px;
-}
+
 #advantages{
     padding: 50px;
     position: relative;
     overflow: hidden;
-    margin: 50px 0;
+    margin: 20px 0;
 }
 .advantages-item{
     display: flex;
