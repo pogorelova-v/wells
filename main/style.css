@@ -188,6 +188,7 @@ h1{
 }
 .swiper-slide img{
     width: 100%;
+    border-radius: 15px;
 }
 .wrapper-slider{
     overflow: hidden;
@@ -503,7 +504,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 .video2-elem iframe{
     width: 100%;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 .video2-elem:first-child{
     margin-bottom: 30px;
